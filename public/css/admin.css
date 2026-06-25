@@ -40,6 +40,11 @@ a{color:inherit}
 .pw-toggle{position:absolute;top:50%;right:8px;transform:translateY(-50%);width:34px;height:34px;
   display:flex;align-items:center;justify-content:center;background:none;border:0;color:var(--ink-3);cursor:pointer;border-radius:8px}
 .pw-toggle:hover{color:var(--ink);background:rgba(255,255,255,.06)}
+/* Visibilidad determinista de los iconos (no depender del atributo [hidden] en <svg>) */
+.pw-toggle .pw-eye{display:block}
+.pw-toggle .pw-eye-off{display:none}
+.pw-toggle.is-on .pw-eye{display:none}
+.pw-toggle.is-on .pw-eye-off{display:block}
 .btn-adm{
   display:inline-flex;align-items:center;justify-content:center;width:100%;margin-top:8px;
   background:var(--teal);color:var(--teal-ink);font-family:"Montserrat",sans-serif;font-weight:700;font-size:.95rem;
@@ -55,7 +60,7 @@ body.dash{display:flex;min-height:100dvh}
   position:fixed;inset:0 auto 0 0;width:250px;z-index:var(--z-side);
   background:var(--rail);border-right:1px solid var(--line);display:flex;flex-direction:column;
 }
-.side__brand{padding:22px 22px 18px;border-bottom:1px solid var(--line)}
+.side__brand{height:74px;display:flex;align-items:center;padding:0 22px;border-bottom:1px solid var(--line)}
 .side__brand img{width:118px;height:auto;display:block}
 .side__nav{flex:1;padding:16px 12px;display:flex;flex-direction:column;gap:4px;overflow-y:auto}
 .nav-item{
@@ -90,7 +95,7 @@ body.dash{display:flex;min-height:100dvh}
 .dash__main{flex:1;min-width:0;margin-left:250px;display:flex;flex-direction:column}
 .dash__top{
   position:sticky;top:0;z-index:var(--z-top);display:flex;align-items:center;gap:14px;
-  padding:16px 32px;background:rgba(10,16,20,.82);backdrop-filter:blur(10px);border-bottom:1px solid var(--line);
+  height:74px;padding:0 32px;background:rgba(10,16,20,.82);backdrop-filter:blur(10px);border-bottom:1px solid var(--line);
 }
 .dash__burger{display:none;background:none;border:0;color:var(--ink);cursor:pointer;padding:4px}
 .dash__title{font-size:1.3rem}
