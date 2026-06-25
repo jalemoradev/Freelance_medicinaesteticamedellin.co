@@ -2,8 +2,8 @@
 # Si tu plan NO tiene SSH, comenta la linea /vendor/ para versionar la carpeta.
 /vendor/
 
-# Secretos: nunca subir la config real
-/config/config.php
+# Secretos: variables de entorno (nunca subir el .env real)
+.env
 
 # Composer ejecutable local
 composer.phar

@@ -19,6 +19,8 @@ if (PHP_SAPI === 'cli-server') {
 }
 
 require BASE_PATH . '/vendor/autoload.php';
+require BASE_PATH . '/app/env_loader.php';
+load_env(BASE_PATH . '/.env');
 
 $config = require BASE_PATH . '/config/config.php';
 Flight::set('config', $config);
