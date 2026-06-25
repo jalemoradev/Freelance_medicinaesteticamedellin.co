@@ -1,0 +1,21 @@
+{
+    "name": "jalemora/flight-mvc-starter",
+    "description": "Starter MVC minimo sobre FlightPHP, listo para desplegar en Hostinger.",
+    "type": "project",
+    "license": "MIT",
+    "require": {
+        "php": ">=8.1",
+        "ext-pdo": "*",
+        "flightphp/core": "^3.0"
+    },
+    "autoload": {
+        "psr-4": {
+            "App\\": "app/"
+        }
+    },
+    "config": {
+        "optimize-autoloader": true,
+        "sort-packages": true
+    },
+    "minimum-stability": "stable"
+}

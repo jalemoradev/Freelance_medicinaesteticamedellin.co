@@ -1,0 +1,211 @@
+/* ===========================================================
+   MEM — Medicina Estética Medellín
+   Reconstrucción a mano (sin Elementor). Solo HTML/CSS/JS + imágenes.
+   =========================================================== */
+
+:root {
+    --teal: #09a4c2;
+    --teal-dark: #0b8ca5;
+    --green: #9ec30a;
+    --green-dark: #8aac09;
+    --ink: #2b2b2b;
+    --muted: #6b7280;
+    --gray-bg: #eef2f4;
+    --white: #ffffff;
+    --container: 1140px;
+}
+
+* { box-sizing: border-box; margin: 0; padding: 0; }
+
+html { scroll-behavior: smooth; }
+
+body {
+    font-family: "Montserrat", -apple-system, "Segoe UI", Roboto, sans-serif;
+    color: var(--ink);
+    line-height: 1.6;
+    background: var(--white);
+    -webkit-font-smoothing: antialiased;
+}
+
+img { max-width: 100%; height: auto; display: block; }
+
+.container {
+    width: 100%;
+    max-width: var(--container);
+    margin: 0 auto;
+    padding: 0 20px;
+}
+
+section { padding: 60px 0; }
+
+h1, h2, h3, h4 { font-weight: 700; line-height: 1.2; }
+
+.teal { color: var(--teal); }
+.text-center { text-align: center; }
+
+/* ---------- Botón CTA verde (pill) ---------- */
+.btn {
+    display: inline-block;
+    background: var(--green);
+    color: #fafafa;
+    font-weight: 700;
+    font-size: 1.05rem;
+    text-decoration: none;
+    padding: 16px 34px;
+    border-radius: 35px;
+    border: none;
+    cursor: pointer;
+    transition: background .2s, transform .2s;
+    text-align: center;
+}
+.btn:hover { background: var(--green-dark); transform: translateY(-2px); }
+.btn-wrap { text-align: center; margin-top: 30px; }
+
+/* ---------- Header ---------- */
+.site-header {
+    background: var(--white);
+    padding: 18px 0;
+    text-align: center;
+}
+.site-header img { display: inline-block; width: 150px; }
+
+/* ---------- Hero ---------- */
+.hero {
+    position: relative;
+    background: #1a1a1a center/cover no-repeat;
+    color: var(--white);
+    text-align: center;
+    padding: 90px 0 180px;
+}
+.hero::before {
+    content: "";
+    position: absolute; inset: 0;
+    background: rgba(0,0,0,.40);
+}
+.hero .container { position: relative; z-index: 1; }
+.hero .quote { font-style: italic; font-size: 1.05rem; margin-bottom: 18px; opacity: .95; }
+.hero h1 { font-size: 2.4rem; font-weight: 400; }
+.hero h1 strong { display: block; font-weight: 800; font-size: 2.7rem; margin: 6px 0; }
+
+/* ---------- Card cyan (beneficios + círculos), sobrepuesta al hero ---------- */
+.cyan-section { background: var(--white); }
+.cyan-card {
+    max-width: var(--container);    /* mismo ancho máximo que el resto (1140px) */
+    margin: -150px auto 0;          /* sube y se sobrepone al hero */
+    background: var(--teal);
+    color: var(--white);
+    border-radius: 26px;
+    padding: 45px 50px;
+    position: relative;
+    z-index: 5;
+    box-shadow: 0 22px 50px rgba(0,0,0,.20);
+}
+.cyan-inner {
+    display: grid;
+    grid-template-columns: 1.2fr 1fr;
+    align-items: center;
+    gap: 0;
+}
+.cyan-left { padding-right: 45px; }
+.cyan-right {
+    padding-left: 55px;
+    border-left: 2px dashed rgba(255,255,255,.65);   /* línea entrecortada */
+}
+.cyan-card p.lead { font-size: 1.15rem; font-weight: 600; margin-bottom: 18px; }
+.cyan-card ul { list-style: none; }
+.cyan-card ul li { padding: 6px 0 6px 28px; position: relative; font-weight: 600; }
+.cyan-card ul li::before {
+    content: "\2713"; position: absolute; left: 0;
+    font-weight: 700;
+}
+.circles { display: flex; gap: 16px; justify-content: center; }
+.circle { text-align: center; }
+.circle img { width: 120px; height: 120px; border-radius: 50%; object-fit: cover; margin: 0 auto 8px; border: 3px solid rgba(255,255,255,.6); }
+.circle span { font-size: .85rem; font-weight: 600; }
+
+/* ---------- Fila imagen + texto ---------- */
+.row {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 50px;
+    align-items: center;
+}
+.row.reverse .col-text { order: 2; }
+.row h2 { color: var(--teal); font-size: 1.7rem; margin-bottom: 18px; }
+.row h3 { color: var(--teal); font-size: 1.2rem; margin: 18px 0 8px; }
+.row p { margin-bottom: 12px; color: #444; }
+.row .price-hint { font-weight: 700; color: var(--ink); }
+
+/* ---------- Banda título ---------- */
+.title-band { background: var(--gray-bg); text-align: center; }
+.title-band h2 { font-size: 2rem; color: var(--muted); font-weight: 400; }
+.title-band h2 strong { color: var(--teal); }
+
+/* ---------- Centrado simple con CTA ---------- */
+.block-center { text-align: center; }
+.block-center h2 { color: var(--teal); font-size: 1.8rem; margin-bottom: 10px; }
+.block-center h3 { color: var(--teal); font-weight: 800; margin-bottom: 20px; }
+.block-center p { max-width: 760px; margin: 0 auto 12px; color: #444; }
+.block-center img { margin: 24px auto 0; border-radius: 8px; }
+
+/* ---------- Pasos (experiencia) ---------- */
+.steps { display: grid; grid-template-columns: repeat(5, 1fr); gap: 24px; margin-top: 40px; }
+.step { text-align: center; }
+.step img { width: 90px; margin: 0 auto 14px; }
+.step p { font-size: .92rem; color: #444; }
+
+/* ---------- Paquetes (precios) ---------- */
+.packages { display: grid; grid-template-columns: repeat(3, 1fr); gap: 26px; margin-top: 40px; align-items: start; }
+.package {
+    background: var(--gray-bg);
+    border-radius: 10px;
+    padding: 30px 24px;
+    text-align: center;
+}
+.package h3 { color: var(--teal); font-size: 1.3rem; }
+.package .plan { color: var(--muted); font-weight: 700; letter-spacing: 1px; margin: 6px 0; }
+.package .price { color: var(--ink); font-size: 1.5rem; font-weight: 800; margin-bottom: 16px; }
+.package p { font-size: .9rem; color: #555; text-align: left; }
+
+/* ---------- Listas (para ti si / beneficios / confianza) ---------- */
+.list-block { }
+.list-block.gray { background: var(--gray-bg); border-radius: 10px; padding: 40px; }
+.list-block h2 { color: var(--teal); font-size: 1.6rem; margin-bottom: 20px; }
+.list-block ol, .list-block ul { padding-left: 22px; }
+.list-block li { margin-bottom: 12px; color: #444; }
+
+/* ---------- Footer ---------- */
+.site-footer { background: var(--teal); color: var(--white); text-align: center; padding: 50px 0; }
+.social { display: flex; gap: 16px; justify-content: center; margin-top: 26px; }
+.social a {
+    width: 44px; height: 44px; border-radius: 50%;
+    background: rgba(255,255,255,.15);
+    display: flex; align-items: center; justify-content: center;
+    color: var(--white); text-decoration: none; font-size: 1.1rem;
+    transition: background .2s;
+}
+.social a:hover { background: rgba(255,255,255,.3); }
+
+/* ---------- WhatsApp flotante ---------- */
+.wa-float {
+    position: fixed; right: 20px; bottom: 20px; z-index: 50;
+    background: #25d366; color: #fff; width: 58px; height: 58px;
+    border-radius: 50%; display: flex; align-items: center; justify-content: center;
+    font-size: 1.8rem; text-decoration: none; box-shadow: 0 4px 14px rgba(0,0,0,.25);
+}
+
+/* ---------- Responsive ---------- */
+@media (max-width: 900px) {
+    .cyan-inner, .row, .steps, .packages { grid-template-columns: 1fr; }
+    .cyan-card { margin: -90px 16px 0; padding: 32px 24px; }
+    .cyan-left { padding-right: 0; }
+    .cyan-right { padding-left: 0; border-left: none; border-top: 2px dashed rgba(255,255,255,.65); padding-top: 28px; margin-top: 24px; }
+    .row.reverse .col-text { order: 0; }
+    .steps { grid-template-columns: repeat(2, 1fr); }
+    .hero h1 { font-size: 1.8rem; }
+    .hero h1 strong { font-size: 2rem; }
+}
+@media (max-width: 560px) {
+    .steps { grid-template-columns: 1fr; }
+    .circles { flex-wrap: wrap; }
+}

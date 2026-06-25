@@ -1,0 +1,16 @@
+# Hostinger usa LiteSpeed (compatible con reglas Apache mod_rewrite).
+<IfModule mod_rewrite.c>
+    RewriteEngine On
+
+    # Forzar HTTPS en produccion (descomenta en Hostinger):
+    # RewriteCond %{HTTPS} off
+    # RewriteRule ^ https://%{HTTP_HOST}%{REQUEST_URI} [L,R=301]
+
+    # Si no es un archivo ni carpeta real, enviar todo al front controller
+    RewriteCond %{REQUEST_FILENAME} !-f
+    RewriteCond %{REQUEST_FILENAME} !-d
+    RewriteRule ^(.*)$ index.php [QSA,L]
+</IfModule>
+
+# No listar directorios
+Options -Indexes

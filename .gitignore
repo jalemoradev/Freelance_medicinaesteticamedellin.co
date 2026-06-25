@@ -1,0 +1,21 @@
+# Dependencias (en Hostinger: correr "composer install" por SSH).
+# Si tu plan NO tiene SSH, comenta la linea /vendor/ para versionar la carpeta.
+/vendor/
+
+# Secretos: nunca subir la config real
+/config/config.php
+
+# Composer ejecutable local
+composer.phar
+
+# Capturas de comparación guardadas en la raíz (no son del proyecto)
+/*.png
+/Captura*.png
+
+# Artefactos de captura temporales
+/_capture/
+
+# Logs y basura del SO
+*.log
+.DS_Store
+Thumbs.db
