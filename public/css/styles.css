@@ -47,7 +47,7 @@ h1, h2, h3, h4 { font-weight: 700; line-height: 1.2; }
 .btn {
     display: inline-block;
     background: var(--green);
-    color: #fafafa;
+    color: #14250a;
     font-weight: 700;
     font-size: 1.05rem;
     text-decoration: none;
@@ -155,17 +155,82 @@ h1, h2, h3, h4 { font-weight: 700; line-height: 1.2; }
 .step p { font-size: .92rem; color: #444; }
 
 /* ---------- Paquetes (precios) ---------- */
-.packages { display: grid; grid-template-columns: repeat(3, 1fr); gap: 26px; margin-top: 40px; align-items: start; }
+.packages { display: grid; grid-template-columns: repeat(3, 1fr); gap: 26px; margin-top: 40px; align-items: stretch; }
 .package {
     background: var(--gray-bg);
     border-radius: 10px;
     padding: 30px 24px;
     text-align: center;
+    display: flex;
+    flex-direction: column;
 }
 .package h3 { color: var(--teal); font-size: 1.3rem; }
 .package .plan { color: var(--muted); font-weight: 700; letter-spacing: 1px; margin: 6px 0; }
 .package .price { color: var(--ink); font-size: 1.5rem; font-weight: 800; margin-bottom: 16px; }
-.package p { font-size: .9rem; color: #555; text-align: left; }
+.package p { font-size: .9rem; color: #555; text-align: center; }
+
+/* ---------- Banda "Resultados extraordinarios" con imagen flotante ---------- */
+.results-band {
+    position: relative;
+    background: var(--gray-bg);
+    padding: 0;
+    min-height: 150px;
+    margin-top: 60px;          /* espacio para que la imagen sobresalga sin chocar arriba */
+    overflow: visible;
+}
+.results-band .inner {
+    position: relative;
+    min-height: 150px;
+    display: flex;
+    align-items: center;
+}
+.results-band h2 { font-size: 2rem; color: var(--muted); font-weight: 400; }
+.results-band h2 strong { color: var(--teal); }
+/* Imagen fuera del flujo: NO estira la banda; sobresale por arriba */
+.results-figure { position: absolute; right: 0; bottom: 0; margin: 0; }
+.results-figure img { width: 260px; max-width: 40vw; display: block; }
+
+/* ---------- Sección oscura full-width (bg image + texto blanco centrado) ---------- */
+.dark-section {
+    position: relative;
+    background: #0c1622 center/cover no-repeat;
+    color: var(--white);
+    text-align: center;
+    padding: 80px 0;
+}
+.dark-section::before { content: ""; position: absolute; inset: 0; background: rgba(8,16,26,.72); }
+.dark-section .container { position: relative; z-index: 1; max-width: 900px; }
+.dark-section h2 { font-size: 2rem; font-weight: 400; margin-bottom: 24px; }
+.dark-section h2 strong { font-weight: 800; display: block; }
+.dark-section h3 { font-size: 1.25rem; margin: 28px 0 8px; }
+.dark-section p { margin: 0 auto 14px; max-width: 760px; opacity: .95; }
+.dark-section .lead-q { font-weight: 700; margin-top: 22px; }
+
+/* ---------- Fila dividida: panel oscuro (img) + panel claro ---------- */
+.split { display: grid; grid-template-columns: 1fr 1fr; padding: 0; }
+.split-dark {
+    position: relative;
+    background: #0c1622 center/cover no-repeat;
+    color: var(--white);
+    padding: 70px 6vw 70px 6vw;
+}
+.split-dark::before { content: ""; position: absolute; inset: 0; background: rgba(8,16,26,.68); }
+.split-dark > * { position: relative; z-index: 1; }
+.split-dark h2 { font-size: 1.7rem; font-weight: 400; margin-bottom: 22px; }
+.split-dark h2 strong { font-weight: 800; display: block; }
+.split-dark ul { padding-left: 20px; margin-bottom: 26px; }
+.split-dark li { margin-bottom: 12px; opacity: .95; }
+.split-light {
+    background: var(--gray-bg);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    padding: 70px 6vw;
+}
+.split-light h2 { color: var(--teal); font-size: 1.7rem; margin-bottom: 16px; }
+.split-light p { color: #555; max-width: 460px; margin-bottom: 24px; }
 
 /* ---------- Listas (para ti si / beneficios / confianza) ---------- */
 .list-block { }
@@ -196,7 +261,13 @@ h1, h2, h3, h4 { font-weight: 700; line-height: 1.2; }
 
 /* ---------- Responsive ---------- */
 @media (max-width: 900px) {
-    .cyan-inner, .row, .steps, .packages { grid-template-columns: 1fr; }
+    .cyan-inner, .row, .steps, .packages, .split { grid-template-columns: 1fr; }
+    /* Banda "Resultados" en móvil: sin posición absoluta, imagen apilada debajo */
+    .results-band { min-height: auto; margin-top: 0; padding: 36px 0; }
+    .results-band .inner { flex-direction: column; min-height: auto; text-align: center; }
+    .results-figure { position: static; margin: 22px auto 0; }
+    .results-figure img { width: 260px; max-width: 80%; }
+    .split-dark, .split-light { padding: 48px 24px; }
     .cyan-card { margin: -90px 16px 0; padding: 32px 24px; }
     .cyan-left { padding-right: 0; }
     .cyan-right { padding-left: 0; border-left: none; border-top: 2px dashed rgba(255,255,255,.65); padding-top: 28px; margin-top: 24px; }

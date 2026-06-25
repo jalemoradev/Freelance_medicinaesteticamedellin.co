@@ -81,41 +81,45 @@
     </div>
 </section>
 
-<!-- Banda título: Resultados extraordinarios -->
-<section class="title-band">
-    <div class="container">
+<!-- Banda: Resultados extraordinarios + imagen antes/después flotante -->
+<section class="results-band">
+    <div class="container inner">
         <h2>Resultados <strong>extraordinarios</strong></h2>
+        <figure class="results-figure">
+            <img src="/img/antes-y-despues-MEM-Medicina-estetica.png" alt="Antes y después">
+        </figure>
     </div>
 </section>
 
-<!-- Celebridades -->
-<section class="block-center">
-    <div class="container">
-        <h2>Muchas celebridades</h2>
-        <p>se han realizado estos procedimientos y todos se preguntan</p>
-        <h3>¿cómo han logrado rejuvenecer?</h3>
-        <div class="btn-wrap"><a class="btn" href="<?= $wa ?>">Quiero rejuvenecer como estas celebridades</a></div>
-        <img src="/img/celebridades-programa-MEM-Medicina-estetica-1024x575.png" alt="Celebridades programa MEM">
-    </div>
-</section>
-
-<!-- Programa integral: ¿Qué necesita tu rostro? + antes/después -->
+<!-- Celebridades (fila: imagen izquierda, texto derecha) -->
 <section>
     <div class="container row">
-        <div class="col-text">
-            <h2>Programa Integral de Rejuvenecimiento Facial</h2>
-            <p>Te presentamos nuestro Programa Integral de Rejuvenecimiento Facial, diseñado para identificar cada necesidad específica de tu rostro:</p>
-            <p><strong>¿Qué necesita tu rostro? Elige tu solución ideal:</strong></p>
-            <h3>1. Minimizar arrugas y líneas de expresión</h3>
-            <p>El Botox suaviza y previene arrugas y líneas de expresión, devolviéndote esa imagen fresca y vital que sentías perdida.</p>
-            <h3>2. Rellenar surcos, ojeras, labios o código de barras</h3>
-            <p>El Ácido Hialurónico rellena de manera natural surcos como los nasogenianos, ojeras o líneas del labio superior, devolviéndote frescura y juventud.</p>
-            <h3>3. Mejorar la calidad, elasticidad y luminosidad de tu piel</h3>
-            <p>Los Bioestimuladores de colágeno (como Sculptra o Radiesse) estimulan tu piel desde adentro, mejorando firmeza, textura y luminosidad con resultados progresivos.</p>
-        </div>
         <div class="col-img">
-            <img src="/img/antes-y-despues-MEM-Medicina-estetica.png" alt="Antes y después">
+            <img src="/img/celebridades-programa-MEM-Medicina-estetica-1024x575.png" alt="Celebridades">
         </div>
+        <div class="col-text">
+            <h2>Muchas celebridades</h2>
+            <p>se han realizado estos procedimientos y todos se preguntan</p>
+            <h3>¿cómo han logrado rejuvenecer?</h3>
+            <div class="btn-wrap" style="text-align:left;">
+                <a class="btn" href="<?= $wa ?>">Quiero rejuvenecer como estas celebridades</a>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- Programa Integral / ¿Qué necesita tu rostro? (sección oscura full-width) -->
+<section class="dark-section" style="background-image:url('/img/resumen-programa-MEM-Medicina-estetica.jpg');">
+    <div class="container">
+        <h2>Programa Integral <strong>de Rejuvenecimiento Facial</strong></h2>
+        <p>Te presentamos nuestro Programa Integral de Rejuvenecimiento Facial, diseñado para identificar cada necesidad específica de tu rostro:</p>
+        <p class="lead-q">¿Qué necesita tu rostro? Elige tu solución ideal:</p>
+        <h3>1. Minimizar arrugas y líneas de expresión</h3>
+        <p>El Botox suaviza y previene arrugas y líneas de expresión, devolviéndote esa imagen fresca y vital que sentías perdida.</p>
+        <h3>2. Rellenar surcos, ojeras, labios o código de barras</h3>
+        <p>El Ácido Hialurónico rellena de manera natural surcos como los nasogenianos, ojeras o líneas del labio superior, devolviéndote frescura y juventud.</p>
+        <h3>3. Mejorar la calidad, elasticidad y luminosidad de tu piel</h3>
+        <p>Los Bioestimuladores de colágeno (como Sculptra o Radiesse) estimulan tu piel desde adentro, mejorando firmeza, textura y luminosidad con resultados progresivos.</p>
     </div>
 </section>
 
@@ -210,47 +214,27 @@
     </div>
 </section>
 
-<!-- Confianza + imagen asesoría -->
-<section>
-    <div class="container row">
-        <div class="col-text">
-            <h2>Programa Integral de Rejuvenecimiento Facial</h2>
-            <ul class="list-block">
-                <li>Tenemos amplia experiencia en rejuvenecimiento facial.</li>
-                <li>Contamos con un equipo médico calificado y especializado.</li>
-                <li>Más de 1500 pacientes satisfechos.</li>
-                <li>Tratamientos seguros y efectivos.</li>
-                <li>Resultados visibles y naturales.</li>
-                <li>Todos nuestros productos tienen Registro INVIMA.</li>
-                <li>Nuestra clínica está debidamente habilitada por la Seccional de Salud de Antioquia y por la Secretaría de Salud de Medellín.</li>
-            </ul>
-            <div class="btn-wrap" style="text-align:left;"><a class="btn" href="<?= $wa ?>">Quiero agendar mi asesoría profesional</a></div>
-        </div>
-        <div class="col-img">
-            <img src="/img/asesoriaMEM-Medicina-estetica.jpg" alt="Asesoría profesional">
-        </div>
+<!-- Confianza (panel oscuro con imagen) + ¿Tienes dudas? (panel claro) -->
+<section class="split">
+    <div class="split-dark" style="background-image:url('/img/resumen-programa-MEM-Medicina-estetica.jpg');">
+        <h2>Programa Integral <strong>de Rejuvenecimiento Facial</strong></h2>
+        <ul>
+            <li>Tenemos amplia experiencia en rejuvenecimiento facial.</li>
+            <li>Contamos con un equipo médico calificado y especializado.</li>
+            <li>Más de 1500 pacientes satisfechos.</li>
+            <li>Tratamientos seguros y efectivos.</li>
+            <li>Resultados visibles y naturales.</li>
+            <li>Todos nuestros productos tienen Registro INVIMA.</li>
+            <li>Nuestra clínica está debidamente habilitada por la Seccional de Salud de Antioquia y por la Secretaría de Salud de Medellín.</li>
+        </ul>
+        <a class="btn" href="<?= $wa ?>">Quiero agendar mi asesoría profesional</a>
     </div>
-</section>
-
-<!-- ¿Tienes dudas? -->
-<section class="title-band">
-    <div class="container block-center">
+    <div class="split-light">
         <h2>¿Tienes dudas?</h2>
         <p>¿Quieres hablar con uno de nuestros especialistas antes de programar tu asesoría profesional?</p>
-        <div class="btn-wrap"><a class="btn" href="<?= $wa ?>">Quiero resolver dudas</a></div>
+        <a class="btn" href="<?= $wa ?>">Quiero resolver dudas</a>
     </div>
 </section>
-
-<!-- Footer -->
-<footer class="site-footer">
-    <div class="container">
-        <a class="btn" href="<?= $wa ?>">Quiero agendar mi asesoría profesional</a>
-        <div class="social">
-            <a href="#" aria-label="Facebook"><svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor"><path d="M22 12a10 10 0 1 0-11.6 9.9v-7H7.9V12h2.5V9.8c0-2.5 1.5-3.9 3.8-3.9 1.1 0 2.2.2 2.2.2v2.4h-1.2c-1.2 0-1.6.8-1.6 1.6V12h2.7l-.4 2.9h-2.3v7A10 10 0 0 0 22 12z"/></svg></a>
-            <a href="#" aria-label="Instagram"><svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor"><path d="M12 2.2c3.2 0 3.6 0 4.9.1 1.2.1 1.8.3 2.2.4.6.2 1 .5 1.4.9.4.4.7.8.9 1.4.2.5.4 1.1.4 2.2.1 1.3.1 1.7.1 4.9s0 3.6-.1 4.9c-.1 1.2-.3 1.8-.4 2.2-.2.6-.5 1-.9 1.4-.4.4-.8.7-1.4.9-.5.2-1.1.4-2.2.4-1.3.1-1.7.1-4.9.1s-3.6 0-4.9-.1c-1.2-.1-1.8-.3-2.2-.4-.6-.2-1-.5-1.4-.9-.4-.4-.7-.8-.9-1.4-.2-.5-.4-1.1-.4-2.2C2.2 15.6 2.2 15.2 2.2 12s0-3.6.1-4.9c.1-1.2.3-1.8.4-2.2.2-.6.5-1 .9-1.4.4-.4.8-.7 1.4-.9.5-.2 1.1-.4 2.2-.4C8.4 2.2 8.8 2.2 12 2.2zm0 1.8c-3.1 0-3.5 0-4.7.1-1.1.1-1.7.2-2.1.4-.5.2-.9.4-1.3.8-.4.4-.6.8-.8 1.3-.2.4-.3 1-.4 2.1C2.6 9.9 2.6 10.3 2.6 12s0 2.1.1 3.3c.1 1.1.2 1.7.4 2.1.2.5.4.9.8 1.3.4.4.8.6 1.3.8.4.2 1 .3 2.1.4 1.2.1 1.6.1 4.7.1s3.5 0 4.7-.1c1.1-.1 1.7-.2 2.1-.4.5-.2.9-.4 1.3-.8.4-.4.6-.8.8-1.3.2-.4.3-1 .4-2.1.1-1.2.1-1.6.1-3.3s0-2.1-.1-3.3c-.1-1.1-.2-1.7-.4-2.1-.2-.5-.4-.9-.8-1.3-.4-.4-.8-.6-1.3-.8-.4-.2-1-.3-2.1-.4-1.2-.1-1.6-.1-4.7-.1zm0 3.1a4.9 4.9 0 1 1 0 9.8 4.9 4.9 0 0 1 0-9.8zm0 8.1a3.2 3.2 0 1 0 0-6.4 3.2 3.2 0 0 0 0 6.4zm6.2-8.3a1.1 1.1 0 1 1-2.3 0 1.1 1.1 0 0 1 2.3 0z"/></svg></a>
-        </div>
-    </div>
-</footer>
 
 <!-- WhatsApp flotante -->
 <a class="wa-float" href="<?= $wa ?>" aria-label="WhatsApp">
