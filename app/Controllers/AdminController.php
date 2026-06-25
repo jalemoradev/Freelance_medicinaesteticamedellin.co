@@ -35,15 +35,35 @@ class AdminController extends Controller
             return;
         }
         $data = [];
+        $stats = [];
+        $today0 = strtotime('today');
+        $week0  = strtotime('-6 days 00:00:00');
         foreach (self::TABLES as $key => $meta) {
-            $data[$key] = $this->db()
+            $rows = $this->db()
                 ->query("SELECT * FROM {$key} ORDER BY id DESC")
                 ->fetchAll(\PDO::FETCH_ASSOC);
+            $data[$key] = $rows;
+            $today = 0;
+            $week = 0;
+            foreach ($rows as $r) {
+                $ts = strtotime((string) ($r['created_at'] ?? ''));
+                if ($ts === false) {
+                    continue;
+                }
+                if ($ts >= $today0) {
+                    $today++;
+                }
+                if ($ts >= $week0) {
+                    $week++;
+                }
+            }
+            $stats[$key] = ['total' => count($rows), 'today' => $today, 'week' => $week];
         }
         Flight::render('admin-dashboard', [
             'user'   => $_SESSION['admin_name'] ?? 'Admin',
             'tables' => self::TABLES,
             'data'   => $data,
+            'stats'  => $stats,
         ]);
     }
 
