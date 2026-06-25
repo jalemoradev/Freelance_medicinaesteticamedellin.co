@@ -280,3 +280,83 @@ h1, h2, h3, h4 { font-weight: 700; line-height: 1.2; }
     .steps { grid-template-columns: 1fr; }
     .circles { flex-wrap: wrap; }
 }
+
+/* ===========================================================
+   Capa PRO: animaciones de entrada + micro-interacciones
+   (sin librerías; el contenido es visible si JS/IO faltan)
+   =========================================================== */
+
+/* --- Reveal por sección (solo si JS activa .reveal-ready) --- */
+html.reveal-ready .site-header,
+html.reveal-ready section {
+    opacity: 0;
+    transform: translateY(26px);
+    transition: opacity .7s cubic-bezier(.22,1,.36,1), transform .7s cubic-bezier(.22,1,.36,1);
+    will-change: opacity, transform;
+}
+html.reveal-ready .site-header.in,
+html.reveal-ready section.in {
+    opacity: 1;
+    transform: none;
+}
+
+/* --- Stagger de hijos en grillas (círculos, pasos, paquetes) --- */
+html.reveal-ready .circle,
+html.reveal-ready .step,
+html.reveal-ready .package {
+    opacity: 0;
+    transform: translateY(16px);
+    transition: opacity .55s ease-out, transform .55s ease-out;
+}
+html.reveal-ready section.in .circle,
+html.reveal-ready section.in .step,
+html.reveal-ready section.in .package {
+    opacity: 1;
+    transform: none;
+}
+html.reveal-ready section.in :nth-child(2) { transition-delay: .08s; }
+html.reveal-ready section.in :nth-child(3) { transition-delay: .16s; }
+html.reveal-ready section.in :nth-child(4) { transition-delay: .24s; }
+html.reveal-ready section.in :nth-child(5) { transition-delay: .32s; }
+
+/* --- Micro-interacciones --- */
+.btn:active { transform: translateY(0) scale(.98); }
+
+.package { transition: transform .25s ease-out, box-shadow .25s ease-out; box-shadow: 0 1px 3px rgba(0,0,0,.04); }
+.package:hover { transform: translateY(-6px); box-shadow: 0 18px 40px rgba(9,164,194,.16); }
+
+.circle img { transition: transform .3s ease-out; }
+.circle:hover img { transform: scale(1.05); }
+
+.step img { transition: transform .3s ease-out; }
+.step:hover img { transform: translateY(-4px); }
+
+/* Profundidad sutil en imágenes de contenido (sin cambiar forma) */
+.col-img img, .results-figure img { box-shadow: 0 14px 36px rgba(0,0,0,.12); }
+
+/* --- Foco visible accesible (teclado) --- */
+a:focus-visible, .btn:focus-visible, button:focus-visible {
+    outline: 3px solid var(--teal);
+    outline-offset: 3px;
+    border-radius: 6px;
+}
+
+/* --- WhatsApp flotante: pulso sutil + hover --- */
+.wa-float { animation: wa-pulse 2.6s ease-out infinite; transition: transform .2s ease-out; }
+.wa-float:hover { transform: scale(1.08); }
+@keyframes wa-pulse {
+    0%   { box-shadow: 0 4px 14px rgba(0,0,0,.25), 0 0 0 0 rgba(37,211,102,.5); }
+    70%  { box-shadow: 0 4px 14px rgba(0,0,0,.25), 0 0 0 16px rgba(37,211,102,0); }
+    100% { box-shadow: 0 4px 14px rgba(0,0,0,.25), 0 0 0 0 rgba(37,211,102,0); }
+}
+
+/* --- Respeto total a reduced-motion --- */
+@media (prefers-reduced-motion: reduce) {
+    *, *::before, *::after {
+        animation-duration: .001ms !important;
+        animation-iteration-count: 1 !important;
+        transition-duration: .001ms !important;
+        scroll-behavior: auto !important;
+    }
+    .wa-float { animation: none; }
+}

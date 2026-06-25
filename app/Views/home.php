@@ -3,7 +3,7 @@
 <!-- Header -->
 <header class="site-header">
     <div class="container">
-        <img src="/img/log-azul-MEM-Medicina-estetica.jpg" alt="MEM - Medicina Estética Medellín">
+        <img src="/img/log-azul-MEM-Medicina-estetica.jpg" alt="MEM - Medicina Estética Medellín" width="150" height="74" decoding="async" fetchpriority="high">
     </div>
 </header>
 
@@ -30,15 +30,15 @@
             <div class="cyan-right">
                 <div class="circles">
                     <div class="circle">
-                        <img src="/img/2-MEM-Medicina-estetica.png" alt="Ácido Hialurónico">
+                        <img loading="lazy" decoding="async" src="/img/2-MEM-Medicina-estetica.png" alt="Ácido Hialurónico">
                         <span>Acido Hialuronico</span>
                     </div>
                     <div class="circle">
-                        <img src="/img/3-MEM-Medicina-estetica.png" alt="Bioestimuladores">
+                        <img loading="lazy" decoding="async" src="/img/3-MEM-Medicina-estetica.png" alt="Bioestimuladores">
                         <span>Bioestimuladores</span>
                     </div>
                     <div class="circle">
-                        <img src="/img/1-MEM-Medicina-estetica.png" alt="Botox">
+                        <img loading="lazy" decoding="async" src="/img/1-MEM-Medicina-estetica.png" alt="Botox">
                         <span>Botox</span>
                     </div>
                 </div>
@@ -61,7 +61,7 @@
             </div>
         </div>
         <div class="col-img">
-            <img src="/img/rejuvenecimiento-MEM-Medicina-estetica.png" alt="Antes y después rejuvenecimiento facial">
+            <img loading="lazy" decoding="async" src="/img/rejuvenecimiento-MEM-Medicina-estetica.png" alt="Antes y después rejuvenecimiento facial">
         </div>
     </div>
 </section>
@@ -70,7 +70,7 @@
 <section>
     <div class="container row reverse">
         <div class="col-img">
-            <img src="/img/cansado-mem.jpg" alt="Hombre cansado">
+            <img loading="lazy" decoding="async" src="/img/cansado-mem.jpg" alt="Hombre cansado">
         </div>
         <div class="col-text">
             <h2>¿Te ves cansado, envejecido o apagado aunque no te sientas así?</h2>
@@ -86,7 +86,7 @@
     <div class="container inner">
         <h2>Resultados <strong>extraordinarios</strong></h2>
         <figure class="results-figure">
-            <img src="/img/antes-y-despues-MEM-Medicina-estetica.png" alt="Antes y después">
+            <img loading="lazy" decoding="async" src="/img/antes-y-despues-MEM-Medicina-estetica.png" alt="Antes y después">
         </figure>
     </div>
 </section>
@@ -95,7 +95,7 @@
 <section>
     <div class="container row">
         <div class="col-img">
-            <img src="/img/celebridades-programa-MEM-Medicina-estetica-1024x575.png" alt="Celebridades">
+            <img loading="lazy" decoding="async" src="/img/celebridades-programa-MEM-Medicina-estetica-1024x575.png" alt="Celebridades">
         </div>
         <div class="col-text">
             <h2>Muchas celebridades</h2>
@@ -130,23 +130,23 @@
         <p>Es muy fácil…solo tienes que seguir estos pasos:</p>
         <div class="steps">
             <div class="step">
-                <img src="/img/Registro-programa-MEM-Medicina-estetica.jpg" alt="Registro">
+                <img loading="lazy" decoding="async" src="/img/Registro-programa-MEM-Medicina-estetica.jpg" alt="Registro">
                 <p>Dale clic al botón y regístrate en el formulario con tu nombre, correo y celular.</p>
             </div>
             <div class="step">
-                <img src="/img/asesoria-MEM-Medicina-estetica.jpg" alt="Asesoría">
+                <img loading="lazy" decoding="async" src="/img/asesoria-MEM-Medicina-estetica.jpg" alt="Asesoría">
                 <p>Dale "enviar", y uno de nuestros asesores se pondrá en contacto contigo a través de Whatsapp.</p>
             </div>
             <div class="step">
-                <img src="/img/preguntas-MEM-Medicina-estetica.jpg" alt="Preguntas">
+                <img loading="lazy" decoding="async" src="/img/preguntas-MEM-Medicina-estetica.jpg" alt="Preguntas">
                 <p>Aclara tus dudas y programa tu asesoría.</p>
             </div>
             <div class="step">
-                <img src="/img/cita-MEM-Medicina-estetica.jpg" alt="Cita">
+                <img loading="lazy" decoding="async" src="/img/cita-MEM-Medicina-estetica.jpg" alt="Cita">
                 <p>Asiste a tu cita, recibe la asesoría y el documento con tu plan personalizado.</p>
             </div>
             <div class="step">
-                <img src="/img/procedimiento-MEM-Medicina-estetica.jpg" alt="Procedimiento">
+                <img loading="lazy" decoding="async" src="/img/procedimiento-MEM-Medicina-estetica.jpg" alt="Procedimiento">
                 <p>Evalúa si empiezas el mismo día, o también podrás programar la fecha de inicio.</p>
             </div>
         </div>
