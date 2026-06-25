@@ -5,6 +5,9 @@
 # Secretos: variables de entorno (nunca subir el .env real)
 .env
 
+# Documentacion con credenciales SSH/BD (nunca subir)
+/CONEXION-SSH.md
+
 # Composer ejecutable local
 composer.phar
 
