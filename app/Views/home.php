@@ -254,12 +254,43 @@
         <div class="closer__inner">
             <h2>¿Tienes dudas?</h2>
             <p>¿Quieres hablar con uno de nuestros especialistas antes de programar tu asesoría profesional?</p>
-            <a class="btn btn--lg" href="<?= $wa ?>">Quiero resolver dudas</a>
+            <a class="btn btn--lg" href="<?= $wa ?>" data-keep-wa target="_blank" rel="noopener">Quiero resolver dudas</a>
         </div>
     </div>
 </section>
 
+<!-- Modal: agendar asesoría -->
+<dialog class="modal" id="agenda-modal" aria-label="Agenda tu asesoría profesional">
+    <form class="modal__card" id="agenda-form" method="post" action="/agendar" novalidate>
+        <button class="modal__x" type="button" data-close aria-label="Cerrar">
+            <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" aria-hidden="true"><path d="M6 6l12 12M18 6L6 18"/></svg>
+        </button>
+        <img class="modal__logo" src="/img/logo-white.png" alt="MEM - Medicina Estética Medellín" width="170" height="61" decoding="async">
+
+        <div class="modal__field">
+            <label for="m-name">Tu nombre</label>
+            <input id="m-name" name="name" type="text" autocomplete="name" required>
+            <span class="modal__err" data-err-for="name"></span>
+        </div>
+
+        <div class="modal__field">
+            <label for="m-email">Tu correo electrónico</label>
+            <input id="m-email" name="email" type="email" autocomplete="email" required>
+            <span class="modal__err" data-err-for="email"></span>
+        </div>
+
+        <div class="modal__field">
+            <label for="m-phone">Tu teléfono</label>
+            <input id="m-phone" name="phone" type="tel" inputmode="numeric" placeholder="Ej: 300 123 4567" autocomplete="tel" required>
+            <span class="modal__err" data-err-for="phone"></span>
+        </div>
+
+        <button class="btn modal__submit" type="submit">Quiero agendar mi asesoria</button>
+        <p class="modal__msg" id="agenda-msg" role="status" aria-live="polite"></p>
+    </form>
+</dialog>
+
 <!-- WhatsApp -->
-<a class="wa-float" href="<?= $wa ?>" aria-label="Escríbenos por WhatsApp">
+<a class="wa-float" href="<?= $wa ?>" target="_blank" rel="noopener" aria-label="Escríbenos por WhatsApp">
     <svg width="30" height="30" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M.1 24l1.7-6.2A11.9 11.9 0 1 1 12 24a11.9 11.9 0 0 1-5.7-1.5L.1 24zM6.6 20l.4.2a9.9 9.9 0 0 0 5 1.4 9.9 9.9 0 1 0-8.4-4.6l.3.4-1 3.6 3.7-1zM17.5 14.3c-.1-.2-.5-.3-1-.6s-1.2-.6-1.4-.6c-.2-.1-.3-.1-.5.1l-.7.8c-.1.2-.2.2-.5.1a8 8 0 0 1-2.4-1.5 9 9 0 0 1-1.6-2c-.2-.3 0-.4.1-.6l.5-.5c.1-.1.1-.3.2-.4 0-.2 0-.3 0-.4l-.7-1.7c-.2-.5-.4-.4-.5-.4h-.5c-.2 0-.4 0-.6.3a2.8 2.8 0 0 0-.9 2.1c0 1.3.9 2.5 1 2.6.1.2 1.8 2.8 4.4 3.9 1.6.7 2.2.7 3 .6.5-.1 1.2-.5 1.4-1 .2-.5.2-.9.1-1z"/></svg>
 </a>

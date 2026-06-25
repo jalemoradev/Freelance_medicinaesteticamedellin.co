@@ -12,9 +12,11 @@
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Sans:ital,wght@0,400;0,500;0,600;1,400&family=Montserrat:wght@600;700;800&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="/css/styles.css?v=10">
+    <link rel="stylesheet" href="/assets/vendor/intl-tel-input/css/intlTelInput.min.css">
+    <link rel="stylesheet" href="/css/styles.css?v=16">
     <link rel="icon" type="image/png" href="/img/logo-color.png">
-    <script src="/js/app.js?v=10"></script>
+    <script src="/assets/vendor/intl-tel-input/js/intlTelInput.min.js"></script>
+    <script src="/js/app.js?v=16"></script>
 </head>
 <body>
     <?= $content ?>

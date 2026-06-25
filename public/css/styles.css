@@ -257,3 +257,85 @@ html.reveal-ready section.in :nth-child(4){transition-delay:.24s} html.reveal-re
     .wa-float { animation: none; }
     html.reveal-ready section, html.reveal-ready .treat, html.reveal-ready .need, html.reveal-ready .tl, html.reveal-ready .tier { opacity: 1; transform: none; }
 }
+
+/* ===========================================================
+   Modal: agendar asesoría
+   =========================================================== */
+.modal {
+    border: 0; padding: 0; margin: auto; max-width: 540px; width: calc(100% - 32px);
+    border-radius: 18px; background: var(--bg-2); color: var(--ink);
+    border: 1px solid var(--line-2); box-shadow: 0 40px 90px rgba(0,0,0,.6);
+}
+.modal::backdrop { background: rgba(6,11,14,.80); backdrop-filter: blur(3px); }
+.modal[open] { animation: modal-in .25s ease-out; }
+@keyframes modal-in { from { opacity: 0; transform: translateY(14px); } to { opacity: 1; transform: none; } }
+.modal__card { padding: 40px 38px 34px; display: flex; flex-direction: column; position: relative; }
+.modal__logo { width: 165px; height: auto; margin: 0 auto 26px; }
+.modal__x {
+    position: absolute; top: 14px; right: 14px;
+    width: 38px; height: 38px; border-radius: 50%;
+    background: rgba(255,255,255,.06); border: 1px solid var(--line-2);
+    color: var(--ink-soft); cursor: pointer;
+    display: flex; align-items: center; justify-content: center;
+    transition: background .2s, color .2s, transform .2s;
+}
+.modal__x:hover { background: rgba(255,255,255,.12); color: var(--ink); transform: rotate(90deg); }
+.modal__field { margin-bottom: 16px; }
+.modal__field label { display: block; font-size: .92rem; color: var(--ink-soft); margin-bottom: 8px; font-weight: 600; }
+.modal__field > input,
+.modal__phone select,
+.modal__phone input {
+    font-family: "IBM Plex Sans", sans-serif; font-size: 1rem; color: var(--ink);
+    background: rgba(255,255,255,.05); border: 1px solid var(--line-2); border-radius: 10px;
+    transition: border-color .15s, box-shadow .15s, background .15s;
+}
+.modal__field > input { width: 100%; padding: 13px 15px; }
+.modal__field > input::placeholder, .modal__phone input::placeholder { color: #6b7d86; }
+.modal__phone { display: flex; gap: 8px; }
+.modal__phone select { padding: 13px 8px; flex: 0 0 auto; max-width: 112px; cursor: pointer; }
+.modal__phone select option { color: #14242c; }
+.modal__phone input { flex: 1; min-width: 0; padding: 13px 15px; }
+.modal__field > input:focus,
+.modal__phone select:focus,
+.modal__phone input:focus { outline: none; border-color: var(--teal); box-shadow: 0 0 0 3px rgba(42,182,214,.22); background: rgba(255,255,255,.08); }
+.modal__submit { width: 100%; margin-top: 8px; }
+.modal__msg { margin-top: 14px; font-size: .95rem; min-height: 1.2em; text-align: center; color: var(--ink-soft); }
+.modal__msg.is-error { color: #ff6b6b; }
+.modal__msg.is-ok { color: #9ee37d; font-weight: 700; }
+
+/* Errores de validación por campo */
+.modal__err { display: block; color: #ff6b6b; font-size: .82rem; margin-top: 6px; min-height: 1em; }
+
+/* intl-tel-input dentro del modal oscuro */
+.modal, .modal__card { overflow: visible; }   /* el desplegable no se recorta */
+.modal .iti { width: 100%; display: block; }
+.modal .iti input,
+.modal .iti input[type="tel"] {
+    width: 100%;
+    background: rgba(255,255,255,.05);
+    border: 1px solid var(--line-2);
+    border-radius: 10px;
+    color: var(--ink);
+    padding-top: 13px; padding-bottom: 13px; padding-right: 15px;
+    font-family: "IBM Plex Sans", sans-serif; font-size: 1rem;
+    transition: border-color .15s, box-shadow .15s, background .15s;
+}
+.modal .iti input:focus {
+    outline: none; border-color: var(--teal);
+    box-shadow: 0 0 0 3px rgba(42,182,214,.22); background: rgba(255,255,255,.08);
+}
+.modal .iti input::placeholder { color: #6b7d86; }
+.modal .iti__selected-flag { border-radius: 10px 0 0 10px; }
+.modal .iti--separate-dial-code .iti__selected-flag { background: rgba(255,255,255,.08); }
+.modal .iti--separate-dial-code .iti__selected-dial-code { color: var(--ink); }
+.modal .iti:hover .iti__selected-flag, .modal .iti .iti__selected-flag:focus { background: rgba(255,255,255,.14); }
+.modal .iti__country-list {
+    background: var(--bg-3); border: 1px solid var(--line-2); color: var(--ink);
+    box-shadow: 0 14px 34px rgba(0,0,0,.5); max-width: 340px; white-space: normal;
+}
+.modal .iti__country.iti__highlight { background: rgba(255,255,255,.09); }
+.modal .iti__dial-code { color: var(--ink-soft); }
+.modal .iti__divider { border-color: var(--line-2); }
+@media (max-width: 480px) {
+    .modal__card { padding: 34px 22px 24px; }
+}
